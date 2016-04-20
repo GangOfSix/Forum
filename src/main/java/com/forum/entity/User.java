@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,26 +21,37 @@ public class User {
 	private String email;
 	private int phonenumber;
 	private String face;
-	//private int range;
+	private int authority;
 	private int level;
-	/*private User user;
-	private Set<User> users = new HashSet<>();*/
+	
+	@OneToMany(mappedBy="user1")
+	public Set<Friend> getToBeFriend() {
+		return toBeFriend;
+	}
+	public void setToBeFriend(Set<Friend> toBeFriend) {
+		this.toBeFriend = toBeFriend;
+	}
+	@OneToMany(mappedBy="user2")
+	public Set<Friend> getFriends() {
+		return friends;
+	}
+	public void setFriends(Set<Friend> friends) {
+		this.friends = friends;
+	}
+	private Set<Friend> toBeFriend = new HashSet<>();
+	private Set<Friend> friends = new HashSet<>();
+	
 	private Set<Post> posts = new HashSet<>();
+	
+	@Column(nullable=true)
+	public int getAuthority() {
+		return authority;
+	}
+	public void setAuthority(int authority) {
+		this.authority = authority;
+	}
 	private Set<Reply> replies = new HashSet<>();
 	private Set<Comment> comments = new HashSet<>();
-	
-	/*public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public Set<User> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}*/
 	
 	@OneToMany(mappedBy="user")
 	public Set<Post> getPosts() {
@@ -100,13 +113,6 @@ public class User {
 	public void setFace(String face) {
 		this.face = face;
 	}
-/*	@Column(nullable=true)
-	public int getRange() {
-		return range;
-	}
-	public void setRange(int range) {
-		this.range = range;
-	}*/
 	@Column(nullable=true)
 	public int getLevel() {
 		return level;
