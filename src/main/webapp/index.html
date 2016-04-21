@@ -1,10 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="css/index.css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/nav.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<title>Forum</title>
 </head>
 <body>
-	Hello world!
+
+	<nav class="navbar navbar-default" role="navigation">
+	     <div class="navbar-header">
+	            <a class="navbar-brand" href="#">Forum</a>
+	     </div>
+	     <div>
+	            <ul class="nav navbar-nav">
+	                 <li class="active"><a href="#">功能</a></li>
+	                 <li><a href="#">功能</a></li>
+	                 <li><a href="#">功能</a></li>
+	            </ul>
+	     </div>
+	</nav>
+	
+	<div class="bars-div" id="bars-div" style="display: none;"><i class="fa fa-bars fa-2x"></i></div>
+	
+	<div class="nav-div" id="nav-div">
+		<ul class="nav nav-list bs-docs-sidenav affix-top">
+			<li class="active">
+				<a href="#overview" id="disappear-a"><i class="icon-chevron-right"></i>收起</a>
+			</li>
+			<li class="">
+				<a href="#transitions"><i class="icon-chevron-right"></i>板块</a>
+			</li>
+			<li class="">
+				<a href="#modals"><i class="icon-chevron-right"></i>板块</a>
+			</li>
+			<li class="">
+				<a href="#"><i class="icon-chevron-right"></i>收起</a>
+			</li>
+			<li>
+				<a href="#scrollspy"><i class="icon-chevron-right"></i>板块</a>
+			</li>
+			<li class="">
+				<a href="#tabs"><i class="icon-chevron-right"></i>板块</a>
+			</li>
+			<li class="">
+				<a href="#tooltips"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#popovers"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#alerts"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#buttons"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#collapse"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#carousel"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#typeahead"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+			<li class="">
+				<a href="#affix"><i class="icon-chevron-right"></i> 板块</a>
+			</li>
+		</ul>
+	</div>
+		
+	<div class="container" id="main-div">
+		<a id="tech" href="http://www.qq.com"></a>
+	</div>		
+	
+	<script type="text/javascript">
+		$(function() {
+			$('.nav li').click(function(e) {
+				$('.nav li').removeClass('active');
+				//$(e.target).addClass('active');
+				$(this).addClass('active');
+			});
+		});
+	</script>
+	
 </body>
 </html>
