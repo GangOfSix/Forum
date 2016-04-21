@@ -1,5 +1,6 @@
 package com.forum.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ public class Post {
 	private String title;
 	private String context;
 	private String attachment;
+	private Date date;
 	private User user;
 	private Set<Comment> comments = new HashSet<>();
 	private Board board;
@@ -71,5 +73,11 @@ public class Post {
 	}
 	public void setAttachment(String attachment) {
 		this.attachment = attachment;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

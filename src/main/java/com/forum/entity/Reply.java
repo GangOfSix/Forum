@@ -1,5 +1,7 @@
 package com.forum.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class Reply {
 	private int id;
 	private String context;
+	private Date date;
 	private User user;
 	private Comment comment;
 	
@@ -44,6 +47,12 @@ public class Reply {
 	}
 	public void setContext(String context) {
 		this.context = context;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 }
