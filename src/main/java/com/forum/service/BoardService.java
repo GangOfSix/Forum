@@ -15,6 +15,6 @@ public class BoardService {
 	private BoardDao boardDao;
 	
 	public List<Board> find() {
-		return boardDao.find("from Board");
+		return boardDao.find();
 	}
 }
