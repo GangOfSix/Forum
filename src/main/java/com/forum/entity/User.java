@@ -19,7 +19,7 @@ public class User {
 	private String nickname;
 	private String password;
 	private String email;
-	private int phonenumber;
+	private long phonenumber;
 	private String face;
 	private int authority;
 	private int level;
@@ -101,10 +101,10 @@ public class User {
 		this.email = email;
 	}
 	@Column(nullable=true)
-	public int getPhonenumber() {
+	public long getPhonenumber() {
 		return phonenumber;
 	}
-	public void setPhonenumber(int phonenumber) {
+	public void setPhonenumber(long phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 	public String getFace() {
