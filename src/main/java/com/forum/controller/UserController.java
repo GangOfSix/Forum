@@ -1,7 +1,10 @@
 package com.forum.controller;
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
 
+=======
+>>>>>>> master
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,15 +23,22 @@ public class UserController {
 	private UserService userService;
 	Logger logger = Logger.getLogger(UserController.class);
 	
+<<<<<<< HEAD
 	@RequestMapping(value="/register",method = RequestMethod.POST)
 	@ResponseBody 
 	public String register(User user)  {		
+=======
+	@RequestMapping(value="/userRegister",method = RequestMethod.POST)
+	@ResponseBody 
+	public String userRegister(User user)  {		
+>>>>>>> master
 		logger.info(user.getNickname());
 		
 		if(userService.save(user)!=null)
 			return "success";
 		else return "fail";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value="/get")
 	@ResponseBody 
@@ -70,6 +80,8 @@ public class UserController {
 		
 		return (userService.getByNickname(nickname)==null);
 	}
+=======
+>>>>>>> master
 /*	@RequestMapping("/get")
 	@ResponseBody
 	public List<Board> get() {
