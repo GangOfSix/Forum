@@ -2,10 +2,10 @@ $(document).ready(function() {
 	$("#button").click(
 			function() {
 				if (validate.form()) {
-					var url = "user/userRegister";
+					var url = "user/register";
 					var args = $("#register").serialize();
 					alert("click");
-					//alert(validate.form());
+					// alert(validate.form());
 					
 					$.post(url, args, function(data) {
 						if (data == "success") {
@@ -60,9 +60,14 @@ $(document).ready(function() {
 				minlength : 2,
 				stringCheck : true,
 				maxlength : 15,
-				byteRangeLength : [ 2, 15 ]
+				byteRangeLength : [ 2, 15 ],
+				remote : {                                          // 验证用户名是否存在
+			         type:"POST",
+			         url:"user/validate",
+			          
+			         data:{nickname:function(){return $("#nickname").val();}}
+				}
 			},
-	
 			password : {
 				required : true,
 				minlength : 6,
@@ -90,14 +95,15 @@ $(document).ready(function() {
 			nickname : {
 				required : "请填写用户名",
 				minlength : "用户名太短",
-				maxlength : "用户名过长"
+				maxlength : "用户名过长",
+				remote:"用户名已经被注册"
 	
 			},
 	
 			password : {
 				required : "请填写密码",
 				minlength : "密码不能小于{0}个字符",
-				minlength : "密码不能大于{0}个字符"
+				maxlength : "密码不能大于{0}个字符"
 			},
 			confirm_password : {
 				required : "请确认密码",
@@ -120,21 +126,15 @@ $(document).ready(function() {
 				$(element).valid();
 			},
 	
-		/*submitHandler: function(form) {  //通过之后回调 
-			var url = "user/userRegister";
-			var args = $("#register").serialize();
-			alert("click");
-			alert(validate.form());
+		
+/*		  submitHandler: function(form) { //通过之后回调
+			  var url ="user/userRegister"; var args = $("#register").serialize();
+			  alert("click"); alert(validate.form());
 			  
-			$.post(url, args, function(data) {
-				if (data == "success") {
-					alert("注册成功！");
-					window.location.href = "";
-				} else
-					alert("fail");
-			});  
-		}*/
-	})
+			  $.post(url, args, function(data) { if (data == "success") {
+			  alert("注册成功！"); window.location.href = ""; } else alert("fail"); }); }*/
+		 
+	});
 
 	
 })
