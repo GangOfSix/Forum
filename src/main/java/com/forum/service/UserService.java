@@ -22,7 +22,6 @@ public class UserService {
 	public List<User> find() {
 		return userDao.find("from User");
 	}
-<<<<<<< HEAD
 	
 	public User getByNickname(String nickname) {
 		String[] param = {nickname};
@@ -44,6 +43,4 @@ public class UserService {
 		return userDao.get("from User where email = ?", param);
 		
 	}
-=======
->>>>>>> master
 }
