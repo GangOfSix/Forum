@@ -135,6 +135,5 @@ $(document).ready(function() {
 			  alert("注册成功！"); window.location.href = ""; } else alert("fail"); }); }*/
 		 
 	});
-
 	
 })

@@ -29,9 +29,12 @@ public class PostController {
 		
 		Board board = (Board)session.getAttribute("board");
 		User user = (User)session.getAttribute("user");
-		if(postService.save(post,board,user)!=null)
+		post.setUser(user);
+		post.setBoard(board);
+		if(postService.save(post)!=null) {
 			return "success";
-		else return "fail";
+		}
+		return "fail";
 	}
 	
 	@RequestMapping(value="/get")

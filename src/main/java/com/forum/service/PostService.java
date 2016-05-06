@@ -19,13 +19,7 @@ public class PostService {
 	@Autowired
 	private PostDao postDao;
 	
-	public Serializable save(Post post,Board board,User user){
-		System.out.println("!");
-		post.setBoard(board);
-		//board.getPosts().add(post);
-		System.out.println("!2");
-		post.setUser(user);
-		//user.getPosts().add(post);
+	public Serializable save(Post post){
 		return postDao.save(post);
 	}
 	

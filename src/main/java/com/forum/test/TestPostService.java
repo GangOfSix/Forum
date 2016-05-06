@@ -22,7 +22,7 @@ public class TestPostService {
 	@Test
 	public void test() {
 		
-		postService.save(new Post(), boardService.getById(1),userService.getById(1));
+		//postService.save(new Post(), boardService.getById(1),userService.getById(1));
 	}
 
 }
