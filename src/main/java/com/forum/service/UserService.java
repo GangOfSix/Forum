@@ -28,7 +28,7 @@ public class UserService {
 		return userDao.get("from User where nickname = ?", param);
 	}
 
-	public User getById(String id) {
+	public User getById(int id) {
 		return userDao.get(User.class, id);
 	}
 

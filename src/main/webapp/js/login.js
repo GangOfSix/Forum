@@ -7,7 +7,7 @@ $(document).ready(
 					$.post(url,args,function(result){
 						if (result == true) {
 							alert("登录成功！");
-							window.location.href = "index.html";
+							window.location.href = "home.html";
 						} else
 							alert("用户名或密码错误");
 					});

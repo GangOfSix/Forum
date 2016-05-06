@@ -23,6 +23,8 @@ public class User {
 	private String face;
 	private int authority;
 	private int level;
+	private String captcha;//验证码
+	private boolean status;//状态
 	
 	@OneToMany(mappedBy="user1")
 	public Set<Friend> getToBeFriend() {
@@ -119,6 +121,18 @@ public class User {
 	}
 	public void setLevel(int level) {
 		this.level = level;
+	}
+	public String getCaptcha() {
+		return captcha;
+	}
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 }

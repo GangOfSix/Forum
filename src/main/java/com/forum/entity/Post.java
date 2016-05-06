@@ -12,13 +12,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="t_post")
 public class Post {
 	private int id;
 	private String title;
-	private String context;
-	private String attachment;
+	private String content;
+	private String attachment;//附件
 	private Date date;
 	private User user;
 	private Set<Comment> comments = new HashSet<>();
@@ -26,6 +28,7 @@ public class Post {
 	
 	@ManyToOne
 	@JoinColumn(name="boardid")
+	@JsonBackReference
 	public Board getBoard() {
 		return board;
 	}
@@ -42,6 +45,7 @@ public class Post {
 	
 	@ManyToOne
 	@JoinColumn(name="userid")
+	@JsonBackReference
 	public User getUser() {
 		return user;
 	}
@@ -62,11 +66,11 @@ public class Post {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContext() {
-		return context;
+	public String getContent() {
+		return content;
 	}
-	public void setContext(String context) {
-		this.context = context;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getAttachment() {
 		return attachment;

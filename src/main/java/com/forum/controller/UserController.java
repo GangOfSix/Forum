@@ -32,7 +32,7 @@ public class UserController {
 	
 	@RequestMapping(value="/get")
 	@ResponseBody 
-	public User getById(String id){	
+	public User getById(int id){	
 		return userService.getById(id);
 	}
 	
@@ -51,7 +51,7 @@ public class UserController {
 	@RequestMapping(value="/login")
 	@ResponseBody 
 	public boolean login(String str,String password,HttpSession session){
-		logger.info("��������"+str+password);
+		logger.info("登录信息"+str+"  "+password);
 		User user = this.loginWay(str);
 		
 		if((user!=null)&&password.equals(user.getPassword())){
@@ -70,10 +70,16 @@ public class UserController {
 		
 		return (userService.getByNickname(nickname)==null);
 	}
-/*	@RequestMapping("/get")
+	
+	@RequestMapping(value="/update")
 	@ResponseBody
-	public List<Board> get() {
-		logger.info(userService.find());
-		return userService.find();
-	}*/
+	public void update(){
+		
+	}
+	@RequestMapping(value="/ban")
+	@ResponseBody
+	public void ban(){
+		
+	}
+	
 }

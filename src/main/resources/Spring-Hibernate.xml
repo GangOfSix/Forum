@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
-		 
+		
 	<context:annotation-config></context:annotation-config>
 	
 	<!-- c3p0数据库连接池 -->
@@ -37,13 +37,13 @@
 					org.hibernate.dialect.MySQLDialect
 				</prop>
 				<prop key="hibernate.show_sql">
-					false
+					true
 				</prop>
 				<prop key="hibernate.hbm2ddl.auto">
 					update
 				</prop>
 			</props>
-		</property>	
+		</property>
 		<!-- 包级扫描 hibernate实体类 --> 
 		<property name="packagesToScan">
 			<list>
@@ -51,12 +51,12 @@
 			</list>
 		</property>
 	</bean>	
-	
+
 	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<tx:annotation-driven transaction-manager="txManager"/>
-	
+	 
 	<!-- 配置事务 -->
 	<tx:advice id="txAdvice" transaction-manager="txManager">  
 	    <tx:attributes>  

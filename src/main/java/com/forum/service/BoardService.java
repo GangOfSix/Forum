@@ -17,4 +17,13 @@ public class BoardService {
 	public List<Board> find() {
 		return boardDao.find();
 	}
+	
+	public Board getById(int id){
+		return boardDao.get(Board.class, id);
+	}
+
+	public Board getByName(String name) {
+		String[] param = {name};
+		return boardDao.get("from Board where name = ?", param);
+	}
 }

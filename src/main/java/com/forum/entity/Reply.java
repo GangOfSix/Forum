@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 public class Reply {
 	private int id;
-	private String context;
+	private String content;
 	private Date date;
 	private User user;
 	private Comment comment;
@@ -42,11 +42,11 @@ public class Reply {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getContext() {
-		return context;
+	public String getContent() {
+		return content;
 	}
-	public void setContext(String context) {
-		this.context = context;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public Date getDate() {
 		return date;

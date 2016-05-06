@@ -75,7 +75,7 @@ $(document).ready(function() {
 			},
 			confirm_password : {
 				required : true,
-				minlength : 6,
+				
 				equalTo : "#password"
 			},
 			phonenumber : {
@@ -107,7 +107,7 @@ $(document).ready(function() {
 			},
 			confirm_password : {
 				required : "请确认密码",
-				minlength : "确认密码不能小于{0}个字符",
+				
 				equalTo : "两次输入密码不一致"
 			},
 			phonenumber : {
